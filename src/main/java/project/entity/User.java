@@ -1,6 +1,7 @@
 package project.entity;
 
-import javax.persistence.*;
+
+import javax.persistence.PrePersist;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -21,11 +22,12 @@ public class User {
     private List<Post> posts = new ArrayList<>();
     private LocalDateTime createdDate;
 
+
+
     @PrePersist
     protected void onCreate() {
+
         this.createdDate = LocalDateTime.now();
     }
-
-
 
 }
