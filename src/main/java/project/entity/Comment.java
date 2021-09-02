@@ -1,14 +1,25 @@
 package project.entity;
 
-import javax.persistence.PrePersist;
+import lombok.Data;
+
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Data
+@Entity
 public class Comment {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @ManyToOne(fetch = FetchType.EAGER)
     private Post post;
-    private String nickname;
+    @Column(nullable = false)
+    private String username;
     private Long userId;
+    @Column(columnDefinition = "text", nullable = false)
     private String message;
+    @Column(updatable = false)
     private LocalDateTime createdDate;
 
 
