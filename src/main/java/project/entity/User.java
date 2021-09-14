@@ -12,8 +12,8 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 
-@Data
 @Entity
+@Data
 public class User implements UserDetails {
 
     @Id
@@ -64,7 +64,6 @@ public class User implements UserDetails {
 
     @PrePersist
     protected void onCreate() {
-
         this.createdDate = LocalDateTime.now();
     }
 
@@ -75,7 +74,7 @@ public class User implements UserDetails {
 
 
     @Override
-    public String getPassword(){
+    public String getPassword() {
         return password;
     }
 
