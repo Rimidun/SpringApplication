@@ -1,6 +1,6 @@
 package project.annotations;
 
-import org.hibernate.validator.internal.constraintvalidators.bv.EmailValidator;
+import project.validations.EmailValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
