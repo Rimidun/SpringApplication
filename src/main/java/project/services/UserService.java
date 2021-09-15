@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import project.dto.UserDTO;
 import project.entity.User;
 import project.entity.enums.ERole;
 import project.exceptions.UserExistException;
@@ -43,6 +44,15 @@ public class UserService {
             LOG.error("Error during registration. {}", e.getMessage());
             throw new UserExistException("The user " + user.getUsername() + " already exist. Please check credentials");
         }
+    }
+
+    public User updateUser(UserDTO userDTO, Principal principal) {
+        User user = getUserByPrincipal(principal);
+        user.setName(userDTO.getFirstname());
+        user.setLastname(userDTO.getLastname());
+        user.setBio(userDTO.getBio());
+
+        return userRepository.save(user);
     }
 
     public User getCurrentUser(Principal principal) {
