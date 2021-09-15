@@ -1,18 +1,18 @@
 package project.services;
 
-import com.example.demo.dto.CommentDTO;
-import com.example.demo.entity.Comment;
-import com.example.demo.entity.Post;
-import com.example.demo.entity.User;
-import com.example.demo.exceptions.PostNotFoundException;
-import com.example.demo.repository.CommentRepository;
-import com.example.demo.repository.PostRepository;
-import com.example.demo.repository.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import project.dto.CommentDTO;
+import project.entity.Comment;
+import project.entity.Post;
+import project.entity.User;
+import project.exceptions.PostNotFoundException;
+import project.repository.CommentRepository;
+import project.repository.PostRepository;
+import project.repository.UserRepository;
 
 import java.security.Principal;
 import java.util.List;
