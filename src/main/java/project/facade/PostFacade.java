@@ -8,6 +8,7 @@ import project.entity.Post;
 public class PostFacade {
 
     public PostDTO postToPostDTO(Post post) {
+
         PostDTO postDTO = new PostDTO();
         postDTO.setUsername(post.getUser().getUsername());
         postDTO.setId(post.getId());

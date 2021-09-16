@@ -6,8 +6,8 @@ import project.entity.Comment;
 
 @Component
 public class CommentFacade {
-    public CommentDTO commentDTO(Comment comment) {
 
+    public CommentDTO commentDTO(Comment comment) {
 
         CommentDTO commentDTO = new CommentDTO();
         commentDTO.setId(comment.getId());
