@@ -8,7 +8,6 @@ import project.entity.Post;
 public class PostFacade {
 
     public PostDTO postToPostDTO(Post post) {
-
         PostDTO postDTO = new PostDTO();
         postDTO.setUsername(post.getUser().getUsername());
         postDTO.setId(post.getId());
@@ -16,10 +15,9 @@ public class PostFacade {
         postDTO.setLikes(post.getLikes());
         postDTO.setUsersLiked(post.getLikedUsers());
         postDTO.setLocation(post.getLocation());
-        postDTO.setTitle(postDTO.getTitle());
+        postDTO.setTitle(post.getTitle());
 
         return postDTO;
-
     }
 
 }
