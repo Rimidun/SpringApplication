@@ -67,10 +67,10 @@ public class User implements UserDetails {
         this.createdDate = LocalDateTime.now();
     }
 
+
     /**
      * SECURITY
      */
-
 
 
     @Override
